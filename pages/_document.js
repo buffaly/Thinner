@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="th">
         <Head>
-          <title>Storylog 3.0</title>
+          <title>Thinner</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta charSet="utf-8" />
           <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
