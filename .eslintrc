@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": "storylog",
+  "globals": {
+    "window": true,
+    "document": true,
+    "Image": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": 0
+  }
+}

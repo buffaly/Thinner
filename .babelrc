@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "next/babel",
+    "es2017",
+    "stage-0"
+  ],
+  "plugins": [
+    ["babel-plugin-root-import", [{
+      "rootPathPrefix": "@"
+    }]]
+  ]
+}
