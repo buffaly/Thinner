@@ -38,14 +38,14 @@ export default compose(
               oneway: true
           });
       };
-      document.getElementById('open-room').onclick = function() {
-          connection.open(document.getElementById('room-id').value, function() {
-              showRoomURL(connection.sessionid);
-          });
-      };
-      document.getElementById('join-room').onclick = function() {
-          connection.join(document.getElementById('room-id').value);
-      };
+      // document.getElementById('open-room').onclick = function() {
+      //     connection.open(document.getElementById('room-id').value, function() {
+      //         showRoomURL(connection.sessionid);
+      //     });
+      // };
+      // document.getElementById('join-room').onclick = function() {
+      //     connection.join(document.getElementById('room-id').value);
+      // };
       document.getElementById('open-or-join-room').onclick = function() {
           connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
               if(!isRoomExists) {
