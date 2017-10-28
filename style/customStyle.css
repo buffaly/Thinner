@@ -8,6 +8,10 @@ Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/getMediaEleme
 Demo          - www.WebRTC-Experiment.com/getMediaElement
 */
 
+.ant-layout-content {
+  min-height: 90vh;
+}
+
 .media-container, .media-container * {
   margin: 0;
   padding: 0;
@@ -28,11 +32,9 @@ Demo          - www.WebRTC-Experiment.com/getMediaElement
 .media-container {
   width: 36%;
   display: inline-block;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 4px;
+  border: 0;
   overflow: hidden;
   vertical-align: top;
-  background: white;
 }
 
 .media-box {

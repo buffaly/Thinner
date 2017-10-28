@@ -24,6 +24,11 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
           <style dangerouslySetInnerHTML={{ __html: customStyle }} />
+
+          <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+          <script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
+          <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+          <script src="https://cdn.webrtc-experiment.com:443/getScreenId.js"></script>
         </Head>
 
         <body>
