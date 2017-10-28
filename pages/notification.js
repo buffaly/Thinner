@@ -90,6 +90,7 @@ class Notification extends React.Component {
                 <Breadcrumb.Item>Notification</Breadcrumb.Item>
               </Breadcrumb>
 
+              {/* Just a mockup data */}
               <Card style={{ width: 300, textAlign: 'center' }}>
                 <p>Card content</p>
                 <p>Card content</p>
