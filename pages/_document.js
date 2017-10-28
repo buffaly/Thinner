@@ -6,7 +6,7 @@ const { Header, Content, Footer } = Layout;
 
 import stylesheet from 'antd/dist/antd.css';
 import customStyle from '../style/customStyle.css';
-
+import Navbar from '../components/navbar'
 const FACEBOOK_APP_ID = '1234567890';
 
 export default class MyDocument extends Document {
@@ -28,27 +28,11 @@ export default class MyDocument extends Document {
 
         <body>
           <Layout>
-            <Header style={{ position: 'fixed', width: '100%' }}>
-              <div className="logo" />
-              <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['2']}
-                style={{ lineHeight: '64px' }}
-              >
-                <Menu.Item key="1">nav 1</Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
-              </Menu>
-            </Header>
+            <Navbar/>
 
             <div className="root">
               <Main />
             </div>
-
-            <Footer style={{ textAlign: 'center' }}>
-              Ant Design ©2016 Created by Ant UED
-            </Footer>
           </Layout>
           <NextScript />
           <div dangerouslySetInnerHTML={{ __html: `

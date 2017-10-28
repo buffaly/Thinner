@@ -10,9 +10,16 @@ export default class About extends React.Component {
                 <Row>
               <div className="people_connect">
                 <img src={'/static/image/people_connect.png'} />
+                <h1 className="text-center aboutTitle">what's tinner ?</h1>
               </div>
                 </Row>
                 <style>{`
+                .aboutTitle {
+                    margin-top:40px;
+                    text-align:center;
+                    color:#fff;
+                    font-size:50px;
+                }
                 .people_connect {
                     width:100%;
                     height:auto;

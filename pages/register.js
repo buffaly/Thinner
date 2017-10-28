@@ -13,16 +13,8 @@ export default () =>
       <Layout>
       <Header style={{ position: 'fixed', width: '100%' }}>
         <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1">HOME</Menu.Item>
-        </Menu>
       </Header>
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
+      <Content>
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
         
           <Row>
@@ -44,7 +36,11 @@ export default () =>
             <Input prefix={<Icon type="mail" style={{ fontSize: 13 }} />} type="email" placeholder="Email" />
         </FormItem>
         <FormItem>
-        <Col span={10}></Col>
+        <Col span={6}>
+        <p>
+        Already account? <a href="login">Sign in.</a>
+        </p>
+        </Col>
         <Col span={2} style={{marginLeft:12}}>
         <Button
         onClick={interested_language}
@@ -56,16 +52,11 @@ export default () =>
       </Button>
         </Col>
         </FormItem>
-        <p>
-        Already account? <a href="login">Sign in.</a>
-        </p>
+        
       </Form>
         </Col>
       </Row>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2016 Created by ดมกาว
-      </Footer>
     </Layout>
     </div>

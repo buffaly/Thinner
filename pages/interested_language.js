@@ -12,16 +12,9 @@ export default () =>
       <Layout>
       <Header style={{ position: 'fixed', width: '100%' }}>
         <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1">HOME</Menu.Item>
-        </Menu>
+        
       </Header>
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
+      <Content>
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
         
           <Row>
@@ -32,6 +25,7 @@ export default () =>
       <Step title="Step 3" description="" />
       </Steps>
       <h2 style={{textAlign: 'center',marginTop:30}}>Programming language</h2>
+        <br/>
         <Form className="login-form" style={{marginTop:10}}>
         <FormItem>
         <div style={{ background: '#ECECEC', padding: '30px' }}>
@@ -78,8 +72,5 @@ export default () =>
       </Row>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2016 Created by ดมกาว
-      </Footer>
     </Layout>
     </div>

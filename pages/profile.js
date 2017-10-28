@@ -8,7 +8,6 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div>
-                <Navbar/>
                 <div className="col-12 backgroundCover">
                     <div className="avatarImage">
                         <img src={'https://pbs.twimg.com/profile_images/921412284567695360/DhyoYZZj_400x400.jpg'}/>
@@ -19,7 +18,7 @@ export default class Profile extends React.Component {
                     </div>
                 </div>
                 <div className="container clearfix">
-                    <h3 className="ranksTitle">my ranks</h3>
+                    <h3 className="ranksTitle">my favorite code</h3>
                     <br/>
                     <div style={{ background: '#ECECEC', padding: '30px' }}>
                         <Row gutter={16}>
@@ -116,6 +115,7 @@ export default class Profile extends React.Component {
                     .ranksTitle {
                         font-size:24px;
                         text-transform: uppercase;
+                        margin-left:30px;
                     }
                     .listName .ant-card-head-title{
                         font-size:16px;
