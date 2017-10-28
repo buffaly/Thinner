@@ -3,21 +3,13 @@ import ReactDOM from 'react-dom'
 const FormItem = Form.Item;
 const { Header, Content, Footer } = Layout;
 const Step = Steps.Step;
+const done = () => {
+  window.location = '/profile'
+}
 export default () =>
       <div>
       <Layout>
-      <Header style={{ position: 'fixed', width: '100%',zIndex:999 }}>
-        <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1">HOME</Menu.Item>
-        </Menu>
-      </Header>
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
+      <Content>
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
         
           <Row>
@@ -66,7 +58,7 @@ export default () =>
         <Col span={10}></Col>
         <Col span={2} style={{marginLeft:12}}>
         <Button
-        onClick
+        onClick={done}
         type="primary"
         htmlType="submit"
       >
@@ -80,8 +72,5 @@ export default () =>
       </Row>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2016 Created by ดมกาว
-      </Footer>
     </Layout>
     </div>

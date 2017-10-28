@@ -1,70 +1,47 @@
-import { DatePicker } from 'antd';
 import stylesheet from 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer } = Layout;
 import { Card, Col, Row } from 'antd';
 import Navbar from '../components/navbar';
+import React from 'react';
+import fetch from 'isomorphic-fetch';
+import Feed from '../components/feed';
 export default class Profile extends React.Component {
+    static async getInitialProps()  {
+        const res = await fetch('https://api.github.com/users/dtinth')
+        const json = await res.json()
+
+        const res2 = await fetch('https://api.github.com/users/dtinth/repos?per_page=20')
+        const json2 = await res2.json();
+        return {
+            name: json.name,
+            id: json.id,
+            followers: json.followers,
+            following: json.following,
+            avatar_url: json.avatar_url,
+            name: json.name,
+            json2: json2,
+        }
+    }
     render() {
         return (
             <div>
-                <Navbar/>
                 <div className="col-12 backgroundCover">
                     <div className="avatarImage">
-                        <img src={'https://pbs.twimg.com/profile_images/921412284567695360/DhyoYZZj_400x400.jpg'}/>
+                        <img src={this.props.avatar_url}/>
                         <br/>
-                        <h3 className="text-center username">happyudong</h3>
+                        <h3 className="text-center username">{this.props.name}</h3>
                         <br/>
                         <p className="position text-center">react developer</p>
+                        <br/>
+                        <div className="follow">
+                            <p>followers  {this.props.followers}</p>
+                            <p>following  {this.props.following}</p>
+                        </div>
+
                     </div>
                 </div>
-                <div className="container clearfix">
-                    <h3 className="ranksTitle">my ranks</h3>
-                    <br/>
-                    <div style={{ background: '#ECECEC', padding: '30px' }}>
-                        <Row gutter={16}>
-                        <Col span={8}>
-                            <Card className="listName" bordered={false}>
-                                <div className="ranksImage">
-                                    <img src={'/static/icon/react_icon.png'}/>
-                                </div>
-                                <div className="status">
-                                    <br/>
-                                    <h3 className="text-center">react</h3>
-                                    <br/>
-                                    <p>star : 60,000 fork : 700,00 watch : 750,000</p>
-                                </div>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card className="listName" bordered={false}>
-                                <div className="ranksImage">
-                                    <img src={'/static/icon/nextJS_icon.png'}/>
-                                </div>
-                                <div className="status">
-                                    <br/>
-                                    <h3 className="text-center">next.js</h3>
-                                    <br/>
-                                    <p>star : 90,000 fork : 400,00 watch : 350,000</p>
-                                </div>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card className="listName" bordered={false}>
-                                <div className="ranksImage">
-                                    <img src={'/static/icon/graphQL.png'}/>
-                                </div>
-                                <div className="status">
-                                    <br/>
-                                    <h3 className="text-center">graphQL</h3>
-                                    <br/>
-                                    <p>star : 30,000 fork : 100,00 watch : 130,000</p>
-                                </div>
-                            </Card>
-                        </Col>
-                        </Row>
-                    </div>
-                </div>
+                <Feed json2={this.props.json2}/>
                 <style>{`
                     .clearfix {
                         clear:both;
@@ -116,6 +93,7 @@ export default class Profile extends React.Component {
                     .ranksTitle {
                         font-size:24px;
                         text-transform: uppercase;
+                        margin-left:30px;
                     }
                     .listName .ant-card-head-title{
                         font-size:16px;
@@ -149,6 +127,19 @@ export default class Profile extends React.Component {
                         text-transform: uppercase;
                         font-size: 12px;
                         text-align:center;
+                    }
+                    .follow {
+                        width: 200px;
+                        margin: auto;
+                        margin-left: 43.4%;
+                        float: none;
+                        text-align: center;
+                        display: block;
+                    }
+                    .follow p {
+                        color:#fff;
+                        float:left;
+                        margin-right:15px;
                     }
                 `}</style>
             </div>

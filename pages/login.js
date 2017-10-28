@@ -5,7 +5,7 @@ const { Header, Content, Footer } = Layout;
 const Step = Steps.Step;
 
 const register = () => {
-  window.location="register";
+  window.location="/profile";
 }
 
 
@@ -15,17 +15,10 @@ export default () =>
       <Layout>
       <Header style={{ position: 'fixed', width: '100%' }}>
         <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1">HOME</Menu.Item>
-        </Menu>
+       
       </Header>
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
-        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
+      <Content>
+        <div style={{ background: '#fff', padding: 24}}>
         
         <Row>
       <Col span={12} offset = {6}>
@@ -38,9 +31,12 @@ export default () =>
             <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
         </FormItem>
         <FormItem>
-        <Col span={10}></Col>
         <Col span={2}>
-        <Button
+        <a style={{textAlign:'center'}} href="register">Sign Up</a>
+        </Col>
+        <Col span={2}>
+        <Button 
+        className="SignIn" 
         type="primary"
         htmlType="submit"
         onClick={register}
@@ -48,16 +44,22 @@ export default () =>
         Login
       </Button>
         </Col>
-         
         </FormItem>
         </Form>
-        <a style={{textAlign:'center'}} href="register">Sign Up</a>
         </Col>
       </Row>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2016 Created by ดมกาว
-      </Footer>
+      
     </Layout>
+    <style>
+      {`
+        .ant-layout {
+          background: transparent;
+        }
+        .SignIn {
+          margin-left:20px;
+        }
+      `}
+    </style>
     </div>

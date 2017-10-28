@@ -8,7 +8,6 @@ export default class HomePage extends React.Component {
   render(){
     return (
       <div>
-        <Navbar/>
          <Content>
            <div className="col-12 wrapper-backgroundImage">
              <img className="logo-center" src={'/static/icon/tinner_icon.png'} />
