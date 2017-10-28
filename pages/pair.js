@@ -4,16 +4,16 @@ import { lifecycle, compose } from 'recompose';
 
 const { Header, Content, Footer } = Layout;
 
-const PairPage = (props) => (
+const PairPage = () => (
   <Content style={{ padding: '0 50px', marginTop: 64 }}>
     <section>
       <div>
-        <input type="text" id="room-id" value={props.url.query.pairId} autoCorrect="off" autoCapitalize="off" size="20" />
-        {/* <button id="open-room">Open Room</button> */}
-        {/* <button id="join-room">Join Room</button> */}
+        <input type="text" id="room-id" value="" autoCorrect="off" autoCapitalize="off" size="20" />
+        <button id="open-room">Open Room</button>
+        <button id="join-room">Join Room</button>
         <button id="open-or-join-room">Auto Open Or Join Room</button>
 
-        <button id="share-screen" disabled>Share Screen</button>
+        <button id="share-screen">Share Screen</button>
 
         <div id="room-urls"></div>
       </div>
@@ -38,14 +38,14 @@ export default compose(
               oneway: true
           });
       };
-      // document.getElementById('open-room').onclick = function() {
-      //     connection.open(document.getElementById('room-id').value, function() {
-      //         showRoomURL(connection.sessionid);
-      //     });
-      // };
-      // document.getElementById('join-room').onclick = function() {
-      //     connection.join(document.getElementById('room-id').value);
-      // };
+      document.getElementById('open-room').onclick = function() {
+          connection.open(document.getElementById('room-id').value, function() {
+              showRoomURL(connection.sessionid);
+          });
+      };
+      document.getElementById('join-room').onclick = function() {
+          connection.join(document.getElementById('room-id').value);
+      };
       document.getElementById('open-or-join-room').onclick = function() {
           connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
               if(!isRoomExists) {
