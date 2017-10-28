@@ -3,7 +3,9 @@ import stylesheet from 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 import { Card, Col, Row } from 'antd';
-export default class About extends React.Component {
+import React from 'react' 
+import isomorphic_fetch from 'isomorphic-fetch'
+export default class About extends React.Component {      
     render() {
         return (
             <div>
@@ -18,7 +20,7 @@ export default class About extends React.Component {
                     margin-top:40px;
                     text-align:center;
                     color:#fff;
-                    font-size:50px;
+                    font-size:px;
                 }
                 .people_connect {
                     width:100%;
