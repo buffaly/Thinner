@@ -7,9 +7,9 @@
   "author": "buffaly <buffalo660@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "antd": "^2.13.7",
@@ -21,9 +21,10 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
-    "component-react": "^1.0.0",
+    "compression": "^1.7.1",
     "eslint": "^3.19.0",
     "eslint-config-storylog": "https://github.com/storylog/eslint-config-storylog",
+    "express": "^4.16.2",
     "glob": "7.1.1",
     "next": "^4.1.3",
     "next-routes": "^1.1.0",
@@ -34,6 +35,7 @@
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "recompose": "^0.26.0",
     "sass-loader": "^4.1.1",
     "webpack": "^3.0.0"
   }

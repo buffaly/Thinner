@@ -9,4 +9,7 @@ routes.add('login', '/login');
 routes.add('interested_language', '/interested_language');
 routes.add('interested_people', '/interested_people');
 routes.add('profile', '/profile');
+
+routes.add('pair', '/pair/:pairId', 'pair');
+
 module.exports = routes;
